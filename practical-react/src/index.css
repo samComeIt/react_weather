@@ -11,6 +11,8 @@ body {
 .app {
   background-image: url('./assets/summy-uk.jpg');
   background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
 
 }
 
@@ -19,7 +21,7 @@ body {
 }
 
 main {
-  min-height: 100;
+  min-height: 100vh;
   background-image: linear-gradient(to botoom, rgba(0,0,0,0.2), rgba(0,0,0,0.75));
   padding:25px;
 }
