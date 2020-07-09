@@ -56,7 +56,13 @@ const search = evt => {
      <div className="weather-box">
      <div className="temperature">{Math.round(weather.main.temp - 273.15)}°C</div>
      <div className="temperature">{Math.round(((weather.main.temp - 273.15 )* (9/5)) + 32)}°F</div>
-     <div className="weather">{weather.weather[0].main}</div></div>
+     <div className="weather">{weather.weather[0].main}</div>
+     <img src ={`http://openweathermap.org/img/w/${weather.main.icon}.png`} 
+         alt="wthr img" />
+     <div className="weather">{weather.weather[0].description}</div>
+     <div className="weather">{weather.main.pressure} mb</div>
+     <div className="weather">{weather.main.humidity} %</div>
+     <div className="weather">{weather.wind.speed} m/s</div></div>
        </div>
        ) : ('')}
     
