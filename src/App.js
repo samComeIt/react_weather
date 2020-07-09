@@ -4,7 +4,7 @@ const api = {
   key: process.env.REACT_APP_API_KEY,
   base: "https://api.openweathermap.org/data/2.5/"
 }
-console.log(process.env.REACT_APP_API_KEY);
+
 function App(){
 const [query, setQuery] = useState('');
 const [weather, setWeather] = useState({});
@@ -55,6 +55,7 @@ const search = evt => {
      </div>
      <div className="weather-box">
      <div className="temperature">{Math.round(weather.main.temp - 273.15)}°C</div>
+     <div className="temperature">{Math.round(((weather.main.temp - 273.15 )* (9/5)) + 32)}°F</div>
      <div className="weather">{weather.weather[0].main}</div></div>
        </div>
        ) : ('')}
