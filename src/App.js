@@ -7,6 +7,7 @@ const api = {
 
 
 function App() {
+
   const dateBuilder = (d) => {
   let months = ["January", "February", "March", "April", "May", "June", "July","August", "October", "November", "December"];
   
@@ -22,8 +23,20 @@ function App() {
   return (
     <div clasName="App">
       <main>
+        <div className="search-box">
+          <input type="text" className="search-bar" placeholder="Type ..."
+        />
+        </div>
+      <div className="basic-box">
       <div className="date">{dateBuilder(new Date())}</div>
+      <div className="location">
+        Seoul, South Korea</div>
+      </div>
 
+      <div className="weather-box">
+      <div className="temp">23 c</div>
+      <div className="weather">Sunny</div>
+      </div>
       </main>
     </div>
   );
