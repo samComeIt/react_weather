@@ -1,6 +1,6 @@
 # React - weather-app
 
-https://samComeIt.github.io/weather-app-react/
+https://samComeIt.github.io/react_weather/
 
 ## Table of contents
 * [Instructions](#Instructions)
