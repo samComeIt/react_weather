@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 const api_key = process.env.REACT_APP_API_KEY;
 const api_base = "https://api.openweathermap.org/data/2.5/";
 
-
 function App() {
   const [query, setQuery] = useState('');
   const [weather, setWeather] = useState({});
@@ -19,7 +18,7 @@ function App() {
       });
     }
   }
-
+  
   const dateBuilder = (d) => {
   let months = ["January", "February", "March", "April", "May", "June", "July","August", "October", "November", "December"];
   
@@ -29,18 +28,21 @@ function App() {
   let date = d.getDate();
   let month = months[d.getMonth()];
   let year = d.getFullYear();
-
+  
   return `${day} ${date} ${month} ${year}`
   }
   return (
-    <div className="App">
+    <div>
       <main>
+    <div className="App">
+      
         <div className="search-box">
-          <input type="text" className="search-bar" placeholder="Type ..."
+          <input type="text" className="search-bar" placeholder="Search City ..."
           onChange={e => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
         />
+        <i class="material-icons">search</i>
         </div>
         <div className="basic-box">
         <div className="date">{dateBuilder(new Date())}</div>
@@ -48,17 +50,22 @@ function App() {
         {(typeof weather.main != "undefined") ? (
         <div>
           <div className="location-box">
-            <div className="location">{weather.name}, {weather.sys.country}</div>
+        <div className="location">{weather.name}, {weather.sys.country}</div>
           </div>
           <div className="weather-box">
-            <div className="temperatur">
+            <div className="temperature">
               {Math.round(weather.main.temp)}°c
             </div>
             <div className="weather">{weather.weather[0].main}</div>
+      
+            
           </div>
         </div>
         ) : ('')}
-      </main>
+      
+    </div>
+    </main>
+    <footer><a href="https://www.freepik.com/free-photos-vectors/background">Background vector created by vectorpocket - www.freepik.com</a></footer>
     </div>
   );
 }
