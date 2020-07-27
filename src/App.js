@@ -35,14 +35,14 @@ function App() {
     <div>
       <main>
     <div className="App">
-      
+     
         <div className="search-box">
           <input type="text" className="search-bar" placeholder="Search City ..."
           onChange={e => setQuery(e.target.value)}
           value={query}
           onKeyPress={search}
         />
-        <i class="material-icons">search</i>
+       
         </div>
         <div className="basic-box">
         <div className="date">{dateBuilder(new Date())}</div>
